@@ -1,5 +1,5 @@
-import type { Movie } from "../../types/movie";
+import type { Movie } from "../types/movie";
 
-export type movieProps = {
-    title: Movie;
+export type MovieProps = {
+    movie: Movie;
 }
