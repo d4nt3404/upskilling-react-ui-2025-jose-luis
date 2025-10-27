@@ -1,5 +1,5 @@
 import type { Movie } from "../types/movie";
-import { getRandomDate } from "../utils/date.utils";
+import { getRandomDate } from "../assets/utils/date.utils";
 
 export const mockMovie: Movie = {
     id: 1,
