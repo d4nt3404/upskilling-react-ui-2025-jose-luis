@@ -1,11 +1,12 @@
 import React from "react";
 import './App.css'
-import Content  from './assets/components/Content.tsx'
-import Footer  from './assets/components/Footer.tsx'
-import Header  from './assets/components/Header.tsx'
-import PrintMovie from "./assets/components/PrintMovie.tsx";
-import { mockMovie, movieList } from "./assets/mocks/movie.mocks.ts";
-import MovieList from "./assets/components/MovieList.tsx";
+import Content  from './components/Content.tsx'
+import Footer  from './components/Footer.tsx'
+import Header  from './components/Header.tsx'
+import PrintMovie from "./components/PrintMovie.tsx";
+import { mockMovie, movieList } from "./mocks/movie.mocks.ts";
+import MovieList from "./components/MovieList.tsx";
+import UserForm from "./components/userForm/userForm.tsx";
 
 function App() {
  return (
@@ -20,7 +21,11 @@ function App() {
       .map((movie) =>
         <PrintMovie key={movie.id} movie={movie} />
     ) */}
-    <MovieList movies={movieList}/>
+    {/* <MovieList movies={movieList}/> */}
+    <div>
+      <h2>User Form</h2>
+      <UserForm/>
+    </div>
   </>
  )
 }
