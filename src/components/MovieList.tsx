@@ -3,32 +3,20 @@ import type { MovieListProps } from "./types";
 import PrintMovie from "./PrintMovie";
 import type { Movie } from "../types/movie";
 import useUser from "../hooks/useUser";
+import useMovies from "../hooks/useMovies";
 
-function MovieList({movies}: MovieListProps): JSX.Element {
+function MovieList(): JSX.Element {
 
-    const [showRecent, setShowRecent] = useState<boolean>(false);
-    const [loading , setLoading] = useState<boolean>(true);
-    const [movieData , setMovieData] = useState<Movie[]>([]);
+    const { loading , movies: filteredMovies, showRecent, toggleShowRecent } = useMovies();
     const {username} = useUser();
-    
-    useEffect(() => {
-        setTimeout(() => {
-         setMovieData(movies)
-         setLoading(false);
-        }, 2000)
-    }, [movies]);
 
     if(loading){
         return <p>Loading Movies ... </p>
     }
 
-    const filteredMovies = showRecent
-    ? movieData.filter((movie) => movie.releaseDate.getFullYear() >= 2025)
-    : movieData;
-
     return(
         <>
-            <button onClick={()=> setShowRecent(!showRecent)}>
+            <button onClick={toggleShowRecent}>
                 { showRecent ? "Show all movies"
                              : "Show new movies" }
             </button>
