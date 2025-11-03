@@ -21,11 +21,11 @@ function App() {
       .map((movie) =>
         <PrintMovie key={movie.id} movie={movie} />
     ) */}
-    {/* <MovieList movies={movieList}/> */}
-    <div>
+    <MovieList />
+    {/* <div>
       <h2>User Form</h2>
       <UserForm/>
-    </div>
+    </div> */}
   </>
  )
 }
