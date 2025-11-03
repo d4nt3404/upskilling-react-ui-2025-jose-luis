@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import type { JSX } from "react";
 import useUserForm from "../../hooks/useUserForm/useUserForm";
 
 function UserForm(): JSX.Element{

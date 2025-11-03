@@ -17,9 +17,7 @@ function useMovies(): UseMoviesResult {
                 setLoading(true);
                 setError(null);
 
-                const res =  await api.get("https://app-react-course-bk.azurewebsites.net/api/movie/catalog",
-                    {signal: controller.signal}
-                );
+                const res =  await api.get("https://app-react-course-bk.azurewebsites.net/api/movie/catalog", {signal: controller.signal});
 
                 const data = res.data as Array<Movie>;
 
