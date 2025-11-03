@@ -1,5 +1,4 @@
-import { JSX, useEffect, useState } from "react";
-import type { MovieListProps } from "./types";
+import type { JSX } from "react";
 import PrintMovie from "./PrintMovie";
 import type { Movie } from "../types/movie";
 import useUser from "../hooks/useUser";
@@ -27,7 +26,7 @@ function MovieList(): JSX.Element {
 
             {filteredMovies.length > 0
             ? (filteredMovies.map((movie: Movie) => (
-                <PrintMovie key={movie.id} movie={movie} />
+                <PrintMovie key={movie.movieId} movie={movie} />
             )))
             :
             (<p>No movies was found.</p>)

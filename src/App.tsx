@@ -1,31 +1,17 @@
-import React from "react";
+import { useRoutes } from 'react-router-dom'
 import './App.css'
-import Content  from './components/Content.tsx'
-import Footer  from './components/Footer.tsx'
-import Header  from './components/Header.tsx'
-import PrintMovie from "./components/PrintMovie.tsx";
-import { mockMovie, movieList } from "./mocks/movie.mocks.ts";
-import MovieList from "./components/MovieList.tsx";
-import UserForm from "./components/userForm/userForm.tsx";
+import { appRoutes } from './routes/routes.tsx'
+import { Suspense } from 'react';
+
 
 function App() {
+  const routing = useRoutes(appRoutes);
  return (
   <>
-    <Header></Header>
-    <Content></Content>
-    <Footer></Footer>
-
-    {/* <h1><PrintMovie movie={mockMovie}/></h1> */}
-    { /* movieList
-      .filter((movie) => movie.releaseDate.getFullYear() >= 2024)
-      .map((movie) =>
-        <PrintMovie key={movie.id} movie={movie} />
-    ) */}
-    <MovieList />
-    {/* <div>
-      <h2>User Form</h2>
-      <UserForm/>
-    </div> */}
+    <h1>Accenture Movies</h1>
+    <hr/>
+    <Suspense fallback={<p>Loading...</p>}>{routing}</Suspense>
+    {routing}
   </>
  )
 }
